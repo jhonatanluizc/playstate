@@ -1,2 +1,2 @@
 <?php
-header('Location: controller/template.php?view=home');
+header('Location: controller/site.php?view=home');
