@@ -36,6 +36,7 @@ if (isset($_GET["view"]) && isset($view_pages[$_GET["view"]])) {
     require_once($view_link . "navbar" . ".php");
     require_once($view_link . $page . ".php");
     $import->bootstrap("js");
+    $import->table("js");
     ?>
     </div>
     </div>

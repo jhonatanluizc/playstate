@@ -25,24 +25,24 @@
     <!-- barra lateral -->
     <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="../controller/adm.php?view=home">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="clientes.php">
+            <a class="nav-link" href="../controller/adm.php?view=clientes">
                 <i class="fas fa-users"></i>
                 <span>Clientes</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pacotes.php">
+            <a class="nav-link" href="../controller/adm.php?view=adquiridos">
                 <i class="fas fa-shopping-cart"></i>
                 <span>Games Adquiridos</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="viagens.php?req=tabela">
+            <a class="nav-link" href="../controller/adm.php?view=games">
                 <i class="fas fa-gamepad"></i>
                 <span>Games</span></a>
         </li>
