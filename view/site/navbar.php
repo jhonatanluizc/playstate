@@ -14,14 +14,15 @@
                     <a class="nav-link" href="#">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link" href="../controller/site.php?view=login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../controller/site.php?view=cadastro">Cadastro</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../controller/site.php?view=sobre">Sobre</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../controller/site.php?view=login">Login</a>
-                </li>
+
             </ul>
         </div>
     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 15/03/2020 às 15:43
+-- Tempo de geração: 15/03/2020 às 19:26
 -- Versão do servidor: 10.4.11-MariaDB
 -- Versão do PHP: 7.2.27
 
@@ -46,7 +46,7 @@ CREATE TABLE `games` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `value` decimal(10,0) NOT NULL,
-  `genre` varchar(500) NOT NULL,
+  `genre` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`genre`)),
   `discount` decimal(1,0) NOT NULL,
   `quantity` int(11) NOT NULL,
   `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`images`))
@@ -72,7 +72,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `type`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 'admin', 'admin');
+(1, 'admin', 'admin', 'admin', 'admin', 'admin');
 
 --
 -- Índices de tabelas apagadas
