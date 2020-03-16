@@ -9,5 +9,6 @@ $view_pages = array(
     "sobre" => "about",
     "game" => "product",
     "login" => "login",
-    "cadastro" => "register_user"
+    "cadastro" => "register_user",
+    "games" => "games"
 );

@@ -24,7 +24,7 @@
                     <?php
                     require_once("../model/game.php");
                     $game = new Game();
-                    $data = $game->select();
+                    $data = $game->select("");
 
                     foreach ($data as $key => $value) {
                         echo "<tr>";

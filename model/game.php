@@ -16,12 +16,12 @@ class Game
         $connection->prepare($sql)->execute($game);
     }
 
-    function select()
+    function select($where)
     {
         $database = new Database();
         $connection = $database->connection();
 
-        $sql = "select * from games";
+        $sql = "select * from games $where";
 
         $all_data = array();
         foreach ($connection->query($sql) as $row) {
