@@ -126,7 +126,7 @@
                             <input type="password" name="password" class="form-control" placeholder="Senha" required>
                         </div>
 
-                        <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">Cadastrar</button>
+                        <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Cadastrar</button>
 
                         <button onclick="javascript:history.go(-1)" class="btn btn-lg btn-danger btn-block text-uppercase" type="button">Cancelar</button>
 

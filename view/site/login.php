@@ -111,17 +111,18 @@
                     <h5 class="card-title text-center">Login</h5>
                     <form class="form-signin">
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email ou Username" required autofocus>
 
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
 
                         </div>
 
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Realizar Login</button>
-                        <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">Criar Conta</button>
+                        <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit">Realizar Login</button>
+                        <button onclick="window.location.href ='../controller/site.php?view=cadastro'" class="btn btn-lg btn-success btn-block text-uppercase" type="button">Criar Conta</button>
+                        <button onclick="javascript:history.go(-1)" class="btn btn-lg btn-danger btn-block text-uppercase" type="button">Cancelar</button>
 
                         <hr class="my-4">
                         <div class="text-right mx-auto">

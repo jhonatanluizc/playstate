@@ -6,5 +6,6 @@ $view_pages = array(
     "home" => "home",
     "games" => "games",
     "adquiridos" => "games_adquiridos",
-    "clientes" => "clientes"
+    "clientes" => "clientes",
+    "cadastrar" => "register_game"
 );

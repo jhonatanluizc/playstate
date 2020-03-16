@@ -13,6 +13,12 @@
     .card img {
         border-radius: 0px;
     }
+
+    .imgine {
+        height: 160px;
+        object-fit: cover;
+        object-position: center;
+    }
 </style>
 <header class="container">
     <br>
@@ -24,25 +30,21 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('../src/public/games/gow4.jpeg')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="display-4">First Slide</h3>
-                    <p class="lead">This is a description for the first slide.</p>
-                </div>
-            </div>
-            <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('../src/public/games/gow4.jpeg')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3 class="display-4">Second Slide</h3>
-                    <p class="lead">This is a description for the second slide.</p>
-                </div>
-            </div>
-            <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('../src/public/games/gow4.jpeg')">
-                <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-item active" style="background-image: url('../src/public/games/borderlands 3.jpeg')">
+                <!--
+                    <div class="carousel-caption d-none d-md-block">
                     <h3 class="display-4">Third Slide</h3>
                     <p class="lead">This is a description for the third slide.</p>
                 </div>
+                -->
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('../src/public/games/borderlands 3.jpeg')">
+
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('../src/public/games/borderlands 3.jpeg')">
+
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -71,64 +73,56 @@
         Top
         <small>Os melhores games da semana</small>
     </h1>
-
     <div class="row">
-        <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="col-lg-3 col-sm-6 mb-4" onclick="window.location.href ='../controller/site.php?view=game'">
             <div class="card">
-                <a href="../controller/site.php?view=game"><img class="card-img-top" src="../src/public/games/gow4.jpeg" alt=""></a>
+                    <img class="card-img-top imgine" src="../src/public/games/borderlands 3.jpeg" alt="">          
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <span>God of war 4</span>
-                    </h4>
+                    <h5>
+                        <span>borderlands 3</span>
+                    </h5>
                     <div class="text-right">
                         <span>R$59,90</span>
-                        <button>add</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="col-lg-3 col-sm-6 mb-4" onclick="window.location.href ='../controller/site.php?view=game'">
             <div class="card">
-                <a href="#"><img class="card-img-top" src="../src/public/games/gow4.jpeg" alt=""></a>
+                    <img class="card-img-top imgine" src="../src/public/games/borderlands 3.jpeg" alt="">          
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <span>God of war 4</span>
-                    </h4>
+                    <h5>
+                        <span>borderlands 3</span>
+                    </h5>
                     <div class="text-right">
                         <span>R$59,90</span>
-                        <button>add</button>
                     </div>
-
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="col-lg-3 col-sm-6 mb-4" onclick="window.location.href ='../controller/site.php?view=game'">
             <div class="card">
-                <a href="#"><img class="card-img-top" src="../src/public/games/gow4.jpeg" alt=""></a>
+                    <img class="card-img-top imgine" src="../src/public/games/borderlands 3.jpeg" alt="">          
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <span>God of war 4</span>
-                    </h4>
+                    <h5>
+                        <span>borderlands 3</span>
+                    </h5>
                     <div class="text-right">
                         <span>R$59,90</span>
-                        <button>add</button>
                     </div>
-
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="col-lg-3 col-sm-6 mb-4" onclick="window.location.href ='../controller/site.php?view=game'">
             <div class="card">
-                <a href="#"><img class="card-img-top" src="../src/public/games/gow4.jpeg" alt=""></a>
+                    <img class="card-img-top imgine" src="../src/public/games/borderlands 3.jpeg" alt="">          
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <span>God of war 4</span>
-                    </h4>
+                    <h5>
+                        <span>borderlands 3</span>
+                    </h5>
                     <div class="text-right">
                         <span>R$59,90</span>
-                        <button>add</button>
                     </div>
-
                 </div>
             </div>
         </div>

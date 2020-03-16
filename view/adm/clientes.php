@@ -1,9 +1,7 @@
-pagina dos clientes
-<br>
 <?php $import->table("css") ?>
 
 <div class="container">
-    <h2>Tabela de Pacotes</h2>
+    <h2 class="my-4 text-center">Tabela de Clientes</h2>
     <br>
     <!-- table... -->
     <div class="table-responsive">
@@ -11,54 +9,34 @@ pagina dos clientes
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Req</th>
-                        <th>Cliente</th>
-                        <th>Viagem</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
+                        <th>Nome</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Eduardo STR</td>
-                        <td>Disney</td>
-                        <td>1</td>
-                        <td>R$2.749,00</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>brayinha</td>
-                        <td>Hong Kong</td>
-                        <td>2</td>
-                        <td>R$32.000,00</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jason Mamoa</td>
-                        <td>Londres</td>
-                        <td>1</td>
-                        <td>R$12.000,00</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Luisa </td>
-                        <td>Hong Kong</td>
-                        <td>1</td>
-                        <td>R$16.000,00</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>jhonatan luiz chagas</td>
-                        <td>China</td>
-                        <td>2</td>
-                        <td>R$24.000,00</td>
-                    </tr>
+                    <?php
+                    require_once("../model/user.php");
+                    $user = new User();
+                    $data = $user->select();
+
+                    foreach ($data as $key => $value) {
+                        echo "<tr>";
+                        echo  "<td>" . $value["name"] . "</td>";
+                        echo  "<td>" . $value["username"] . "</td>";
+                        echo  "<td>" . $value["email"] . "</td>";
+                        echo  "<td>" . $value["type"] . "</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+
                 </tbody>
             </table>
         </div>
     </div>
     <!-- /table... -->
+
 </div>
 
 <?php $import->table("js") ?>
