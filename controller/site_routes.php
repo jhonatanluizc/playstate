@@ -7,8 +7,9 @@ $view_pages = array(
     "home" => "home",
     "formulario" => "formulario",
     "sobre" => "about",
-    "game" => "product",
+    "games" => "games",
+    "game" => "game",
     "login" => "login",
     "cadastro" => "register_user",
-    "games" => "games"
+
 );

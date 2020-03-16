@@ -1,8 +1,6 @@
 <?php
 require_once("../model/game.php");
 
-
-
 if (isset($_GET["op"])) {
     $op = $_GET["op"];
     if ($op == "register") {
@@ -36,7 +34,36 @@ if (isset($_GET["op"])) {
         $game = new Game();
         $game->create($game_data);
         header('Location: ../controller/adm.php?view=games');
-    } else {
+    } else if ($op == "game") {
+        require_once("../model/game.php");
+        $game = new Game();
+        $data = $game->select("where id = ' " . $_GET["cod"] . "'");
+        $data = $data[0];
+
+?>
+        <script>
+            function sub() {
+                document.getElementById("game").submit();
+            }
+        </script>
+
+        <style>
+            form{
+                display: none;
+            }
+        </style>
+
+        <body onload="sub()">
+            <form id="game" method="POST" action="../controller/site.php?view=game">
+                <input type="text" name="title" value="<?php echo $data["title"]; ?>">
+                <input type="text" name="genre" value="<?php echo $data["genre"]; ?>">
+                <input type="text" name="value" value="<?php echo $data["value"]; ?>">
+                <input type="text" name="description" value="<?php echo $data["description"]; ?>">
+            </form>
+        </body>
+
+<?php
+
     }
 } else {
     echo "Error 404";

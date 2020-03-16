@@ -19,7 +19,7 @@
     $data = $game->select("");
 
     foreach ($data as $key => $game) {
-        $card = "<div class=\"col-lg-3 col-sm-6 mb-4\" onclick=\"window.location.href ='../controller/site.php?view=game'\">";
+        $card = "<div class=\"col-lg-3 col-sm-6 mb-4\" onclick=\"window.location.href ='../controller/game.php?op=game&cod=" . $game["id"] . "'\">";
         $card .= "<div class=\"card\">";
         $card .= "<img class=\"card-img-top imgine\" src=\"../" . $game["wallpaper"] . "\">";
         $card .= "<div class=\"card-body\">";
