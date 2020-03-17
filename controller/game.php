@@ -48,13 +48,14 @@ if (isset($_GET["op"])) {
         </script>
 
         <style>
-            form{
+            form {
                 display: none;
             }
         </style>
 
         <body onload="sub()">
             <form id="game" method="POST" action="../controller/site.php?view=game">
+                <input type="text" name="wallpaper" value="<?php echo $data["wallpaper"]; ?>">
                 <input type="text" name="title" value="<?php echo $data["title"]; ?>">
                 <input type="text" name="genre" value="<?php echo $data["genre"]; ?>">
                 <input type="text" name="value" value="<?php echo $data["value"]; ?>">

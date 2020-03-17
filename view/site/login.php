@@ -109,15 +109,14 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Login</h5>
-                    <form class="form-signin">
+                    <form class="form-signin" action="../controller/user.php?op=login" method="post">
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email ou Username" required autofocus>
+                            <input name="user" type="text" id="inputEmail" class="form-control" placeholder="Email ou Username" required autofocus>
 
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-
+                            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
                         </div>
 
                         <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit">Realizar Login</button>

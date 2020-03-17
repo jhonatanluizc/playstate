@@ -50,8 +50,20 @@
                     </div>
                     <div class="col-md-12 col-lg-4 mt-1">
                         <div class="form-label-group">
-                            <input name="discount" id="discount" placeholder="Desconto (100% = 1)" type="number" min="0" step="0.01" max="1" class="form-control" required>
-                            <label for="discount">Desconto (100% = 1)</label>
+                            <select name="discount" id="discount" placeholder="Desconto" class="form-control" style="height: 50px" required>
+                                <option value="0.00">0%</option>
+                                <option value="0.05">5%</option>
+                                <option value="0.10">10%</option>
+                                <option value="0.15">15%</option>
+                                <option value="0.20">20%</option>
+                                <option value="0.25">25%</option>
+                                <option value="0.30">30%</option>
+                                <option value="0.35">35%</option>
+                                <option value="0.40">40%</option>
+                                <option value="0.45">45%</option>
+                                <option value="0.50">50%</option>
+
+                            </select>
                         </div>
                     </div>
                 </div>

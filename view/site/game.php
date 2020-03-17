@@ -1,5 +1,4 @@
-
-<img class="img-fluid" width="100%" src="../src/public/games/borderlands3.jpg" alt="">
+<img class="img-fluid" width="100%" src="../<?= $_POST["wallpaper"] ?>" alt="">
 <div class="container">
     <br>
     <div class="card">
@@ -15,7 +14,7 @@
     <br>
     <div class="text-justify">
         <p>
-            <?= $_POST["description"] ?>
+            <?= nl2br($_POST["description"]) ?>
         </p>
     </div>
 </div>

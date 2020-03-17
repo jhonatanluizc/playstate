@@ -44,7 +44,7 @@ class User
         $database = new Database();
         $connection = $database->connection();
 
-        $sql = "select * from users where (username = '$user' or email = '$user')";
+        $sql = "select * from users where username = '$user' or email = '$user'";
 
         $data = false;
 

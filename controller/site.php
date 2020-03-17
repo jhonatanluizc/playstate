@@ -1,7 +1,12 @@
 <?php
+require_once("../model/session.php");
+
+$session = new Session();
+$session_status = $session->verify();
+
+
 require_once("../src/imports.php");
 $import = new Imports();
-
 
 require_once("site_routes.php");
 
