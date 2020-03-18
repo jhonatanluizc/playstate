@@ -41,6 +41,32 @@ class Game
         }
         return $all_data;
     }
+
+    function select_where($where)
+    {
+        $database = new Database();
+        $connection = $database->connection();
+
+        $sql = "select * from games $where";
+
+        $all_data = array();
+        foreach ($connection->query($sql) as $row) {
+
+            $data = array(
+                "id" => $row['id'],
+                "title" => $row['title'],
+                "description" => $row['description'],
+                "value" => $row['value'],
+                "genre" => $row['genre'],
+                "discount" => $row['discount'],
+                "quantity" => $row['quantity'],
+                "wallpaper" => $row['wallpaper'],
+            );
+
+            array_push($all_data, $data);
+        }
+        return $all_data;
+    }
 }
 
 function clear_string($string)

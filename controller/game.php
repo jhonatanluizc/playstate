@@ -55,6 +55,7 @@ if (isset($_GET["op"])) {
 
         <body onload="sub()">
             <form id="game" method="POST" action="../controller/site.php?view=game">
+                <input type="text" name="id" value="<?php echo $data["id"]; ?>">
                 <input type="text" name="wallpaper" value="<?php echo $data["wallpaper"]; ?>">
                 <input type="text" name="title" value="<?php echo $data["title"]; ?>">
                 <input type="text" name="genre" value="<?php echo $data["genre"]; ?>">

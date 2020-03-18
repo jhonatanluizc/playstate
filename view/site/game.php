@@ -7,7 +7,8 @@
             <p class="card-text"><?= $_POST["genre"] ?></p>
             <div class="text-right">
                 <span>R$<?= $_POST["value"] ?></span>
-                <button>add</button>
+                <br>
+                <button class="btn btn-primary">Adicionar ao Carrinho</button>
             </div>
         </div>
     </div>
