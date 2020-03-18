@@ -1,3 +1,6 @@
+<?php
+$id_game = $_POST["id"];
+?>
 <img class="img-fluid" width="100%" src="../<?= $_POST["wallpaper"] ?>" alt="">
 <div class="container">
     <br>
@@ -8,7 +11,7 @@
             <div class="text-right">
                 <span>R$<?= $_POST["value"] ?></span>
                 <br>
-                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                <button onclick="window.location.href ='../controller/cart.php?op=add&id_game=<?= $id_game ?>'" class="btn btn-primary">Adicionar ao Carrinho</button>
             </div>
         </div>
     </div>

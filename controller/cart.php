@@ -5,10 +5,16 @@ if (isset($_GET["op"])) {
     $op = $_GET["op"];
 
     if ($op == "add") {
+
+        require_once("../model/session.php");
+        $session = new Session();
+        $session_status = $session->verify();
         $cart = new Cart();
-        $cart->add($user_id, $id_game);
+        $cart->add($session_status["id"], $_GET["id_game"]);
+
+        echo "<script>javascript:alert('Game adicionado ao seu carrinho')</script>";
+        echo "<script>window.location.href ='game.php?op=game&cod= " . $_GET["id_game"] . "'</script>";
     } else if ($op == "carts") {
-        require_once("../model/cart.php");
         $cart = new Cart();
         $data = $cart->select_where("where user_id = ' " . $session_status["id"] . "'");
         $data = $data[0];
