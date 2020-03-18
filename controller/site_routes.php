@@ -11,5 +11,6 @@ $view_pages = array(
     "game" => "game",
     "login" => "login",
     "cadastro" => "register_user",
-    "carrinho" => "cart"
+    "carrinho" => "cart",
+    "pagamento" => "checkout"
 );

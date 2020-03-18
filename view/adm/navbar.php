@@ -1,6 +1,6 @@
 <!-- Navbar - menu topo -->
 <nav class="menu navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="index.php">PlayState</a>
+    <a class="navbar-brand mr-1" href="adm.php?view=home">PlayState</a>
 
     <ul class="navbar-nav ml-auto mr-0 mr-md-3 ">
         <li class="nav-item" style="color:white;">

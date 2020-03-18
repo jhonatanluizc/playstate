@@ -2,7 +2,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="../controller/site.php?view=home">
+            <a class="navbar-brand" href="playstate/controller/adm.php?view=home">
                 <!-- <img src="http://placehold.it/150x30?text=Logo" alt=""> -->
                 PlayState
             </a>
@@ -29,7 +29,7 @@
 
                             <hr>
                             <?php if ($session_status["type"] == "admin") {
-                                echo " <a class='dropdown-item' href='#'>Gerenciar</a>";
+                                echo " <a class='dropdown-item' href='adm.php?view=home'>Gerenciar</a>";
                             } ?>
                             <a class='dropdown-item' href='#'>Configurar</a>
                             <a class="dropdown-item" href="../controller/user.php?op=logout">Sair</a>
