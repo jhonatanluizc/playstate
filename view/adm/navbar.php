@@ -12,7 +12,7 @@
                 <i class="fas fa-user-circle fa-fw "></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <div class="text-center"><a class="dropdown-item" href="../site/index.php">Caravan Paradise<a></div>
+                <div class="text-center"><a class="dropdown-item" href="site.php?view=home">PlayState<a></div>
                 <div class="dropdown-divider"></div>
                 <div class="text-center"><a class="dropdown-item" href="login.php?login=nao">Sair</a></div>
 

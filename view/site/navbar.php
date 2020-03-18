@@ -22,10 +22,15 @@
                     </li>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?= $session_status["name"] ?>
                             <i class="fas fa-user-circle fa-fw "></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <span class='dropdown-item'><?= $util->first_name($session_status["name"]) ?></span>
+
+                            <hr>
+                            <?php if ($session_status["type"] == "admin") {
+                                echo " <a class='dropdown-item' href='#'>Gerenciar</a>";
+                            } ?>
                             <a class='dropdown-item' href='#'>Configurar</a>
                             <a class="dropdown-item" href="../controller/user.php?op=logout">Sair</a>
                         </div>

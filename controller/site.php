@@ -1,4 +1,6 @@
 <?php
+require_once("../model/util.php");
+$util = new Util();
 require_once("../model/session.php");
 
 $session = new Session();
