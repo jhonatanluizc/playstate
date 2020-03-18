@@ -1,1 +1,0 @@
-pagina de games comprados

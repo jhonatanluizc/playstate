@@ -5,7 +5,7 @@ $view_pages = array(
     "404" => "404",
     "home" => "home",
     "games" => "games",
-    "adquiridos" => "games_adquiridos",
+    "adquiridos" => "cart",
     "clientes" => "clientes",
     "cadastrar" => "register_game"
 );
