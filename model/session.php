@@ -31,8 +31,9 @@ class Session
         if (isset($_SESSION['playstate_user']) && isset($_SESSION['playstate_password'])) {
             require_once("../model/user.php");
             $user = new User();
-            if ($user->select_user($_SESSION['playstate_user'], $_SESSION['playstate_password'])) {
-                return true;
+            $user_quary = $user->select_user($_SESSION['playstate_user'], $_SESSION['playstate_password']);
+            if ($user_quary) {
+                return $user_quary;
             }
         }
         session_destroy();

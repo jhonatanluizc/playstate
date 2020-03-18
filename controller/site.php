@@ -28,6 +28,7 @@ if (isset($_GET["view"]) && isset($view_pages[$_GET["view"]])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayState - <?= $view ?></title>
     <?php
+    $import->fontawesome();
     require_once($view_link . "navbar" . ".php");
     $import->bootstrap("css");
     $import->css();

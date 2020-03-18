@@ -15,14 +15,22 @@
                         <a class="nav-link" href="../controller/site.php?view=games">Games</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../controller/site.php?view=carrinho">Carrinho</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../controller/site.php?view=sobre">Sobre</a>
                     </li>
-                    <a class="nav-link" href="#">Conta</a>
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $session_status["name"] ?>
+                            <i class="fas fa-user-circle fa-fw "></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class='dropdown-item' href='#'>Configurar</a>
+                            <a class="dropdown-item" href="../controller/user.php?op=logout">Sair</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../controller/user.php?op=logout">Sair</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
