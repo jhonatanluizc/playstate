@@ -24,27 +24,26 @@
 <div id="wrapper">
     <!-- barra lateral -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="../controller/adm.php?view=home">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
-        </li>
-
         <li class="nav-item">
             <a class="nav-link" href="../controller/adm.php?view=clientes">
                 <i class="fas fa-users"></i>
                 <span>Clientes</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../controller/adm.php?view=adquiridos">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Games Adquiridos</span></a>
+            <a class="nav-link" href="../controller/adm.php?view=cadastrar">
+                <i class="fas fa-plus-circle"></i>
+                <span>Cadastrar Game</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="../controller/adm.php?view=games">
                 <i class="fas fa-gamepad"></i>
                 <span>Games</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../controller/adm.php?view=adquiridos">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Games Adquiridos</span></a>
+        </li>
+
     </ul>
     <div id="content-wrapper">

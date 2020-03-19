@@ -80,7 +80,7 @@
         <?php
         require_once("../model/game.php");
         $game = new Game();
-        $data = $game->select("where id < 4");
+        $data = $game->select("where id <= 4");
 
         foreach ($data as $key => $game) {
             $card = "<div class=\"col-lg-3 col-sm-6 mb-4\" onclick=\"window.location.href ='../controller/game.php?op=game&cod=" . $game["id"] . "'\">";

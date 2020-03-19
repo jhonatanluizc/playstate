@@ -1,17 +1,16 @@
 <?php
 require_once("database.php");
 
-
 class Game
 {
     function create($game)
     {
-        //id, title, description, value, genre, discount, quantity, wallpaper
+        //id, title, description, value, genre, discount, wallpaper
         $database = new Database();
         $connection = $database->connection();
 
-        $sql = ("INSERT INTO games (title, console, description, value, genre, discount, quantity, wallpaper)
-            VALUES (:title, :console, :description, :value, :genre, :discount, :quantity, :wallpaper)");
+        $sql = ("INSERT INTO games (title, console, description, value, genre, discount, wallpaper)
+            VALUES (:title, :console, :description, :value, :genre, :discount, :wallpaper)");
 
         $connection->prepare($sql)->execute($game);
     }
@@ -33,7 +32,6 @@ class Game
                 "value" => $row['value'],
                 "genre" => $row['genre'],
                 "discount" => $row['discount'],
-                "quantity" => $row['quantity'],
                 "wallpaper" => $row['wallpaper'],
             );
 
@@ -59,7 +57,6 @@ class Game
                 "value" => $row['value'],
                 "genre" => $row['genre'],
                 "discount" => $row['discount'],
-                "quantity" => $row['quantity'],
                 "wallpaper" => $row['wallpaper'],
             );
 

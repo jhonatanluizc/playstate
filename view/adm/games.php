@@ -1,7 +1,3 @@
-<div class="container">
-    <a href="../controller/adm.php?view=cadastrar"><button class="btn btn-success">Cadastrar Game</button></a>
-</div>
-
 <?php $import->table("css") ?>
 
 <div class="container">
@@ -17,7 +13,6 @@
                         <th>Título</th>
                         <th>Preço</th>
                         <th>Desconto</th>
-                        <th>Quantidade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +27,6 @@
                         echo  "<td>" . $value["title"] . "</td>";
                         echo  "<td>" . $value["value"] . "</td>";
                         echo  "<td>" . $value["discount"]*100 . "%</td>";
-                        echo  "<td>" . $value["quantity"] . "</td>";
                         echo "</tr>";
                     }
                     ?>

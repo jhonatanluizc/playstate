@@ -11,7 +11,6 @@ if (isset($_GET["op"])) {
         $value = $_POST["value"];
         $genre = $_POST["genre"];
         $discount = $_POST["discount"];
-        $quantity = $_POST["quantity"];
         $wallpaper = $_FILES['wallpaper'];
 
         //tratando o wallpaper
@@ -28,7 +27,6 @@ if (isset($_GET["op"])) {
             "value" => $value,
             "genre" => $genre,
             "discount" => $discount,
-            "quantity" => $quantity,
             "wallpaper" => $wallpaper_url,
         );
         $game = new Game();

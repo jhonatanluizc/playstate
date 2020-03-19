@@ -36,19 +36,13 @@
 
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col-md-12 col-lg-4 mt-1">
-                        <div class="form-label-group">
-                            <input name="quantity" id="quantity" placeholder="Quantidade Disponível" type="number" min="1" step="1" class="form-control" required>
-                            <label for="quantity">Quantidade Disponível</label>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mt-1">
+                    <div class="col-md-12 col-lg-6 mt-1">
                         <div class="form-label-group">
                             <input name="value" id="value" placeholder="Preço Unitário" type="number" min="0" step="0.10" class="form-control" required>
                             <label for="value">Preço Unitário</label>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-4 mt-1">
+                    <div class="col-md-12 col-lg-6 mt-1">
                         <div class="form-label-group">
                             <select name="discount" id="discount" placeholder="Desconto" class="form-control" style="height: 50px" required>
                                 <option value="0.00">0%</option>
