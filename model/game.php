@@ -5,7 +5,8 @@ class Game
 {
     function create($game)
     {
-        //id, title, description, value, genre, discount, wallpaper
+        //id, title, console, description, value, genre, discount, wallpaper
+
         $database = new Database();
         $connection = $database->connection();
 
