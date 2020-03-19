@@ -2,7 +2,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="playstate/controller/adm.php?view=home">
+            <a class="navbar-brand" href="../controller/site.php?view=home">
                 <!-- <img src="http://placehold.it/150x30?text=Logo" alt=""> -->
                 PlayState
             </a>

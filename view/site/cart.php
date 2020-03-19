@@ -51,7 +51,9 @@ $import->table("css");
                                 <h2>Total: <?= $util->money_blr($total) ?></h2>
                             </div>
                             <div class="col-6 text-right">
-                                <button class="btn btn-success">Confirmar Compra</button>
+                                <a href="../controller/site.php?view=pagamento">
+                                    <button class="btn btn-success">Confirmar Compra</button>
+                                </a>
                             </div>
                         </div>
                     </div>

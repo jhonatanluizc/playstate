@@ -1,6 +1,6 @@
 <div class="container">
     <div class="py-5 text-center">
-       
+
         <h2>Formas de Pagamento</h2>
         <p class="lead"></p>
     </div>
@@ -9,9 +9,40 @@
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Seu carrinho</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span id="quantity_cart" class="badge badge-secondary badge-pill">0</span>
             </h4>
             <ul class="list-group mb-3">
+                <?php
+                require_once("../model/cart.php");
+                $cart = new Cart();
+                require_once("../model/game.php");
+                $game = new Game();
+
+                $id_user = $session_status["id"];
+
+                $cart_data = $cart->select_where("where id_user = '$id_user'");
+
+                $total = 0;
+                $quantity = 0;
+                foreach ($cart_data as $key => $value) {
+
+                    $id_game = $value["id_game"];
+                    $game_data = $game->select_where("where id = '$id_game'");
+                    $game_data = $game_data[0];
+
+                    echo "<li class='list-group-item d-flex justify-content-between lh-condensed'>";
+                    echo "<div>";
+                    echo "<h6 class='my-0'>" . $game_data["title"] . "</h6>";
+                    echo "<small class='text-muted'> " . $value["quantity"] . " * " . $util->money_blr($game_data["value"]) . "</small>";
+                    echo "</div>";
+                    echo "<span class='text-muted'>" . $util->money_blr($game_data["value"] * $value["quantity"]) . "</span>";
+
+                    $total += ($game_data["value"] * $value["quantity"]);
+                    $quantity++;
+                }
+
+                ?>
+                <!--
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">Product name</h6>
@@ -19,30 +50,15 @@
                     </div>
                     <span class="text-muted">$12</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Second product</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$8</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Third item</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success">
-                        <h6 class="my-0">Promo code</h6>
-                        <small>EXAMPLECODE</small>
-                    </div>
-                    <span class="text-success">-$5</span>
-                </li>
+            -->
+
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (BRL)</span>
-                    <strong>$20</strong>
+                    <strong><?= $util->money_blr($total) ?></strong>
+                    <script>
+                        var element = document.getElementById("quantity_cart");
+                        element.innerHTML = "<?= $quantity ?>";
+                    </script>
                 </li>
             </ul>
         </div>
@@ -89,7 +105,7 @@
                     </div>
                 </div>
 
-               
+
                 <hr class="mb-4">
 
                 <h4 class="mb-3">Dados de Pagamento</h4>
@@ -98,7 +114,7 @@
                     <div class="custom-control custom-radio">
                         <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
                         <label class="custom-control-label" for="credit">Cartão de Crédito</label>
-                </div>
+                    </div>
                     <div class="custom-control custom-radio">
                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
                         <label class="custom-control-label" for="debit">Cartão de Débito</label>
@@ -129,7 +145,9 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar</button>
+                <a href="site.php?view=carrinho">
+                    <button class="btn btn-primary btn-lg btn-block" type="button">Confirmar</button>
+                </a>
             </form>
         </div>
     </div>
