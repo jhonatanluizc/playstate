@@ -70,8 +70,6 @@ class Game
 
 function string_recive($string)
 {
-    $string = utf8_encode($string);
-    //$string = mb_detect_encoding($string);
     return $string;
 }
 
