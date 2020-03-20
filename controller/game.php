@@ -37,7 +37,7 @@ if (isset($_GET["op"])) {
     } else if ($op == "game") {
         require_once("../model/game.php");
         $game = new Game();
-        $data = $game->select("where id = ' " . $_GET["cod"] . "'");
+        $data = $game->select_where("where id = ' " . $_GET["cod"] . "'");
         $data = $data[0];
 
 ?>

@@ -18,7 +18,7 @@ $id_game = $_POST["id"];
     <br>
     <div class="text-justify">
         <p>
-            <?= nl2br($_POST["description"]) ?>
+            <?= $_POST["description"] ?>
         </p>
     </div>
 </div>
