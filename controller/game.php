@@ -58,9 +58,10 @@ if (isset($_GET["op"])) {
                 <input type="text" name="id" value="<?php echo $data["id"]; ?>">
                 <input type="text" name="wallpaper" value="<?php echo $data["wallpaper"]; ?>">
                 <input type="text" name="title" value="<?php echo $data["title"]; ?>">
+                <input type="text" name="console" value="<?php echo $data["console"]; ?>">
                 <input type="text" name="genre" value="<?php echo $data["genre"]; ?>">
                 <input type="text" name="value" value="<?php echo $data["value"]; ?>">
-                <input type="text" name="description" value="<?php echo $data["description"]; ?>">
+                <input type="text" name="description" value="<?php echo nl2br($data["description"]); ?>">
             </form>
         </body>
 

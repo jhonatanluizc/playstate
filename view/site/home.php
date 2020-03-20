@@ -46,10 +46,11 @@
         </a>
     </div>
 </header>
+
 <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <form class="form-inline ml-auto" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <form class="form-inline ml-auto" action="../controller/site.php?view=games" method="POST">
+            <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-success" type="submit">Search</button>
         </form>
     </nav>
@@ -60,7 +61,7 @@
     <!-- Page Heading -->
     <h1 class="my-4 text-center">
         Top
-        <small>Os melhores games da semana</small>
+        <small>Games Indicados</small>
     </h1>
     <style>
         .card,
@@ -73,7 +74,13 @@
             object-fit: cover;
             object-position: center;
         }
+
+        .the_game{
+            height: 70px;
+        }
     </style>
+
+    
 
     <div class="row">
 
@@ -87,7 +94,7 @@
             $card .= "<div class=\"card\">";
             $card .= "<img class=\"card-img-top imgine\" src=\"../" . $game["wallpaper"] . "\">";
             $card .= "<div class=\"card-body\">";
-            $card .= "<h5><span>" . $game["title"] . "</span></h5>";
+            $card .= "<h5 class=\"the_game\"><span>" . $game["title"] . "</span></h5>";
             $card .= "<div class=\"text-right\"><span>R$" . number_format($game["value"], 2, ',', '.') . "</span></div>";
             $card .= "</div></div></div>";
             echo $card;

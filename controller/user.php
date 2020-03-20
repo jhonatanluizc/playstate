@@ -22,7 +22,7 @@ if (isset($_GET["op"])) {
         $user = $session->login($_POST["user"], $_POST["password"]);
 
         if ($user) {
-            echo "<script>javascript:history.go(-2)</script>";
+            echo "<script>location.href = '../controller/site.php?view=home'</script>";
         }else{
             echo "<script>javascript:alert('Não foi possivel realizar o Login\\nPor favor, verifique seu login e senha')</script>";
             echo "<script>javascript:history.go(-1)</script>";

@@ -6,7 +6,7 @@ class Game
     function create($game)
     {
         //id, title, console, description, value, genre, discount, wallpaper
-        
+
         $database = new Database();
         $connection = $database->connection();
 
@@ -53,30 +53,19 @@ class Game
 
             $data = array(
                 "id" => $row['id'],
-                "title" => string_recive($row['title']),
-                "console" => string_recive($row['console']),
-                "description" => string_recive($row['description']),
+                "title" => $row['title'],
+                "console" => $row['console'],
+                "description" => $row['description'],
                 "value" => $row['value'],
-                "genre" => string_recive($row['genre']),
+                "genre" => $row['genre'],
                 "discount" => $row['discount'],
-                "wallpaper" => string_recive($row['wallpaper']),
+                "wallpaper" => $row['wallpaper']
             );
 
             array_push($all_data, $data);
         }
         return $all_data;
     }
-}
-
-function string_recive($string)
-{
-    return $string;
-}
-
-function string_env($string){
-    $string = utf8_decode($string);
-    //$string = mb_detect_encoding($string);
-    return $string;
 }
 
 
