@@ -34,12 +34,34 @@ if (isset($_GET["view"]) && isset($view_pages[$_GET["view"]])) {
     require_once($view_link . "navbar" . ".php");
     $import->bootstrap("css");
     $import->css();
-    require_once($view_link . $page . ".php");
+
     ?>
 
 </head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
 
-<body>
+    #page-content {
+        flex: 1 0 auto;
+    }
+
+    #sticky-footer {
+        flex-shrink: none;
+    }
+</style>
+
+<body class="d-flex flex-column">
+    <div id="page-content">
+        <?php require_once($view_link . $page . ".php"); ?>
+    </div>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; PlayState</small>
+        </div>
+    </footer>
 
 
     <?php
