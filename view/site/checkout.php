@@ -42,15 +42,6 @@
                 }
 
                 ?>
-                <!--
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Product name</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$12</span>
-                </li>
-            -->
 
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (BRL)</span>
@@ -64,7 +55,7 @@
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Dados de Envio</h4>
-            <form class="needs-validation" novalidate>
+            <form method="post" action="../controller/cart.php?op=clear">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Primeiro nome</label>
@@ -145,11 +136,13 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <a href="site.php?view=carrinho">
-                    <button class="btn btn-primary btn-lg btn-block" type="button">Confirmar</button>
-                </a>
+              
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar</button>
+                
             </form>
         </div>
     </div>
 
 </div>
+<br>
+<br>

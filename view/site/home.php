@@ -28,11 +28,11 @@
                 -->
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('../src/public/games/borderlands 3.jpeg')">
+            <div class="carousel-item" style="background-image: url('../src/public/games/assassin s creed syndicate.jpeg')">
 
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('../src/public/games/borderlands 3.jpeg')">
+            <div class="carousel-item" style="background-image: url('../src/public/games/naruto shippuden ultimate ninja storm 4.jpeg')">
 
             </div>
         </div>
@@ -47,11 +47,30 @@
     </div>
 </header>
 
+<style>
+    .search{
+        display: block;
+    }
+    .search input, .search button {
+        border: 0px;
+        border-style: solid;
+        border-radius: 0px;
+        padding: 5px;
+    }
+    .search button {
+        color: white;
+        padding-left: 9px;
+        padding-right: 9px;
+        margin-left: -6px;
+    }
+</style>
 <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <form class="form-inline ml-auto" action="../controller/site.php?view=games" method="POST">
-            <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
+        <form class="ml-auto" action="../controller/site.php?view=games" method="POST">
+            <div class="search">
+                <input class="" name="search" type="text" placeholder="Search">
+                <button class="bg-success" type="submit"><i class="fas fa-search"></i></button>
+            </div>
         </form>
     </nav>
 </div>
@@ -75,12 +94,12 @@
             object-position: center;
         }
 
-        .the_game{
+        .the_game {
             height: 70px;
         }
     </style>
 
-    
+
 
     <div class="row">
 

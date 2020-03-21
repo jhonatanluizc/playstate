@@ -124,9 +124,7 @@
                         <button onclick="javascript:history.go(-1)" class="btn btn-lg btn-danger btn-block text-uppercase" type="button">Cancelar</button>
 
                         <hr class="my-4">
-                        <div class="text-right mx-auto">
-                            <a href="#">Esqueci minha senha</a>
-                        </div>
+              
 
                     </form>
                 </div>

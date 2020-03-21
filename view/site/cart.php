@@ -15,6 +15,7 @@ $import->table("css");
                         <th>Protocolo</th>
                         <th>Game</th>
                         <th>Quantidade</th>
+                        <th>Opções</th>
                         <th>Preço</th>
                     </tr>
                 </thead>
@@ -32,14 +33,18 @@ $import->table("css");
 
                         $id_game = $value["id_game"];
                         $game_data = $game->select_where("where id = '$id_game'");
-
-                        echo "<tr>";
-                        echo  "<td>" . $value["id"] . "</td>";
-                        echo  "<td>" . ucwords($game_data[0]["title"]) . "</td>";
-                        echo  "<td>" . $value["quantity"] . "</td>";
-                        echo  "<td>" . $util->money_blr($game_data[0]["value"] * $value["quantity"]) . "</td>";
-                        echo "</tr>";
-
+                    ?>
+                        <tr>
+                            <td><?= $value["id"] ?></td>
+                            <td><?= ucwords($game_data[0]["title"]) ?></td>
+                            <td><?= $value["quantity"] ?></td>
+                            <td>
+                                <a href="../controller/cart.php?op=minus&id_game=<?= $id_game ?>"><i class="fas fa-minus-circle"></i></a>
+                                <a href="../controller/cart.php?op=more&id_game=<?= $id_game ?>"><i class="fas fa-plus-circle"></i></a>
+                            </td>
+                            <td><?= $util->money_blr($game_data[0]["value"] * $value["quantity"]) ?></td>
+                        </tr>
+                    <?php
                         $total += ($game_data[0]["value"] * $value["quantity"]);
                     }
 
