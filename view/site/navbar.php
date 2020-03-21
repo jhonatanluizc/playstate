@@ -20,6 +20,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../controller/site.php?view=sobre">Sobre</a>
                     </li>
+
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle fa-fw"></i>
@@ -34,6 +35,7 @@
                             <a class="dropdown-item" href="../controller/user.php?op=logout">Sair</a>
                         </div>
                     </li>
+                    
 
                 </ul>
             </div>

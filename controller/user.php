@@ -2,7 +2,9 @@
 require_once("../model/user.php");
 
 if (isset($_GET["op"])) {
+
     $op = $_GET["op"];
+
     if ($op == "register") {
         $user_data = array(
             "name" => $_POST["name"],
@@ -12,8 +14,27 @@ if (isset($_GET["op"])) {
             "type" => "user"
         );
         $user = new User();
-        $user->create($user_data);
-        header('Location: site.php?view=home');
+
+
+        $check_username = $user->select_where("where username = '" . $_POST["username"] . "'");
+        $check_email = $user->select_where("where email = '" . $_POST["email"] . "'");
+
+        if ($check_username) { ?>
+            <script>
+                alert("Esse Username Já Foi Utilizado");
+                javascript: history.go(-1);
+                //location.href = '../controller/site.php?view=cadastro';
+            </script>
+
+        <?php } else if ($check_email) { ?>
+            <script>
+                alert("Esse Email Já Foi Utilizado");
+                javascript: history.go(-1);
+            </script>
+        <?php } else {
+            $user->create($user_data);
+            header('Location: site.php?view=login');
+        }
     } else if ($op == "login") {
 
         require_once("../model/session.php");
@@ -33,7 +54,7 @@ if (isset($_GET["op"])) {
         $session->logout();
         echo "<script>location.href = '../controller/site.php?view=home'</script>";
     } else if ($op == "edit") {
-?>
+        ?>
         <script>
             function sub() {
                 document.getElementById("game").submit();
@@ -65,7 +86,6 @@ if (isset($_GET["op"])) {
         $user = new User();
         $user->update($user_data);
         header('Location: adm.php?view=clientes');
-
     } else {
         echo "Error 404";
     }

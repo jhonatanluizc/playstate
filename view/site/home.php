@@ -48,15 +48,18 @@
 </header>
 
 <style>
-    .search{
+    .search {
         display: block;
     }
-    .search input, .search button {
+
+    .search input,
+    .search button {
         border: 0px;
         border-style: solid;
         border-radius: 0px;
         padding: 5px;
     }
+
     .search button {
         color: white;
         padding-left: 9px;
@@ -100,25 +103,13 @@
     </style>
 
 
-
     <div class="row">
 
         <?php
         require_once("../model/game.php");
         $game = new Game();
-        $data = $game->select_where("where id <= 4");
-
-        foreach ($data as $key => $game) {
-            $card = "<div class=\"col-lg-3 col-sm-6 mb-4\" onclick=\"window.location.href ='../controller/game.php?op=game&cod=" . $game["id"] . "'\">";
-            $card .= "<div class=\"card\">";
-            $card .= "<img class=\"card-img-top imgine\" src=\"../" . $game["wallpaper"] . "\">";
-            $card .= "<div class=\"card-body\">";
-            $card .= "<h5 class=\"the_game\"><span>" . $game["title"] . "</span></h5>";
-            $card .= "<div class=\"text-right\"><span>R$" . number_format($game["value"], 2, ',', '.') . "</span></div>";
-            $card .= "</div></div></div>";
-            echo $card;
-        }
-
+        $data = $game->select_where("where id <= 8");
+        $util->card_generation($data);
         ?>
 
     </div>

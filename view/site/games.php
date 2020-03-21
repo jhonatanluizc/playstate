@@ -33,16 +33,26 @@
         }
 
         $data = $game->select_where("where title like '%" . $search . "%'");
-     
-        foreach ($data as $key => $game) {
-            $card = "<div class=\"col-lg-3 col-sm-6 mb-4 \" onclick=\"window.location.href ='../controller/game.php?op=game&cod=" . $game["id"] . "'\">";
-            $card .= "<div class=\"card\">";
-            $card .= "<img class=\"card-img-top imgine\" src=\"../" . $game["wallpaper"] . "\">";
-            $card .= "<div class=\"card-body\">";
-            $card .= "<h5 class=\"the_game\"><span>" . $game["title"] . "</span></h5>";
-            $card .= "<div class=\"text-right\"><span>R$" . number_format($game["value"], 2, ',', '.') . "</span></div>";
-            $card .= "</div></div></div>";
-            echo $card;
+        $cont = $util->card_generation($data);
+       
+        if ($cont == 0) {
+            $data = $game->select_where("where genre like '%" . $search . "%'");
+            $cont = $util->card_generation($data);
+        }
+
+        if ($cont == 0) {
+            $data = $game->select_where("where description like '%" . $search . "%'");
+            $cont = $util->card_generation($data);
+        }
+
+        if ($cont == 0) {
+            $data = $game->select_where("where console like '%" . $search[0] . "%'");
+            $cont = $util->card_generation($data);
+        }
+
+        if ($cont == 0) {
+            $data = $game->select_where("");
+            $cont = $util->card_generation($data);
         }
 
         ?>

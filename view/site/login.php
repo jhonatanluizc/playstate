@@ -1,4 +1,6 @@
-<?php $import->all(); ?>
+<?php
+$import->all();
+?>
 <style>
     root {
         --input-padding-x: 1.5rem;
@@ -124,7 +126,7 @@
                         <button onclick="javascript:history.go(-1)" class="btn btn-lg btn-danger btn-block text-uppercase" type="button">Cancelar</button>
 
                         <hr class="my-4">
-              
+
 
                     </form>
                 </div>

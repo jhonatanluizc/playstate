@@ -26,7 +26,7 @@
                         echo  "<td>" . $value["id"] . "</td>";
                         echo  "<td>" . $value["title"] . "</td>";
                         echo  "<td>" . $value["value"] . "</td>";
-                        echo  "<td>" . $value["discount"]*100 . "%</td>";
+                        echo  "<td>" . $value["discount"] * 100 . "%</td>";
                         echo "</tr>";
                     }
                     ?>
