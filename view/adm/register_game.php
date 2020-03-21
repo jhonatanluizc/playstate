@@ -4,7 +4,7 @@
     <div class="card-body">
         <form enctype="multipart/form-data" action="game.php?op=register" method="post">
 
-            <!-- id	title description value	genre discount quantity	images-->
+            <!-- id	title description value	genre quantity	images-->
 
             <div class="form-group">
                 <div class="form-row">
@@ -18,19 +18,14 @@
             </div>
             <div class="form-group">
                 <div class="form-row ">
-                    <div class="col-sm-12 col-lg-6 mt-1">
+                    <div class="col-sm-12 col-lg-12 mt-1">
                         <div class="form-label-group">
                             <input name="genre" id="genre" placeholder="Genero do Game (separado por , )" type="text" class="form-control" required>
                             <label for="genre">Genero do Game (separado por , )</label>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-lg-6 mt-1">
-                        <select name="console" id="console" placeholder="Console" class="form-control" style="height: 50px" required>
-                            <option value="PlayStation 4">PlayStation 4</option>
-                            <option value="Xbox One">Xbox One</option>
-                        </select>
-                    </div>
+
                 </div>
             </div>
 
@@ -42,23 +37,11 @@
                             <label for="value">Preço Unitário</label>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6 mt-1">
-                        <div class="form-label-group">
-                            <select name="discount" id="discount" placeholder="Desconto" class="form-control" style="height: 50px" required>
-                                <option value="0.00">0%</option>
-                                <option value="0.05">5%</option>
-                                <option value="0.10">10%</option>
-                                <option value="0.15">15%</option>
-                                <option value="0.20">20%</option>
-                                <option value="0.25">25%</option>
-                                <option value="0.30">30%</option>
-                                <option value="0.35">35%</option>
-                                <option value="0.40">40%</option>
-                                <option value="0.45">45%</option>
-                                <option value="0.50">50%</option>
-
-                            </select>
-                        </div>
+                    <div class="col-sm-12 col-lg-6 mt-1">
+                        <select name="console" id="console" placeholder="Console" class="form-control" style="height: 50px" required>
+                            <option value="PlayStation 4">PlayStation 4</option>
+                            <option value="Xbox One">Xbox One</option>
+                        </select>
                     </div>
                 </div>
             </div>

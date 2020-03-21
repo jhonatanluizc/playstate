@@ -5,13 +5,13 @@ class Game
 {
     function create($game)
     {
-        //id, title, console, description, value, genre, discount, wallpaper
+        //id, title, console, description, value, genre, wallpaper
 
         $database = new Database();
         $connection = $database->connection();
 
-        $sql = ("INSERT INTO games (title, console, description, value, genre, discount, wallpaper)
-            VALUES (:title, :console, :description, :value, :genre, :discount, :wallpaper)");
+        $sql = ("INSERT INTO games (title, console, description, value, genre, wallpaper)
+            VALUES (:title, :console, :description, :value, :genre, :wallpaper)");
 
         $connection->prepare($sql)->execute($game);
     }
@@ -32,7 +32,6 @@ class Game
                 "description" => $row['description'],
                 "value" => $row['value'],
                 "genre" => $row['genre'],
-                "discount" => $row['discount'],
                 "wallpaper" => $row['wallpaper'],
             );
 
@@ -58,7 +57,6 @@ class Game
                 "description" => $row['description'],
                 "value" => $row['value'],
                 "genre" => $row['genre'],
-                "discount" => $row['discount'],
                 "wallpaper" => $row['wallpaper']
             );
 

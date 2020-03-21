@@ -12,7 +12,6 @@
                         <th>Código</th>
                         <th>Título</th>
                         <th>Preço</th>
-                        <th>Desconto</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +25,6 @@
                         echo  "<td>" . $value["id"] . "</td>";
                         echo  "<td>" . $value["title"] . "</td>";
                         echo  "<td>" . $value["value"] . "</td>";
-                        echo  "<td>" . $value["discount"] * 100 . "%</td>";
                         echo "</tr>";
                     }
                     ?>

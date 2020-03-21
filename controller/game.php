@@ -6,13 +6,12 @@ if (isset($_GET["op"])) {
 
     if ($op == "register") {
 
-        //id, title, console, description, value, genre, discount, wallpaper
+        //id, title, console, description, value, genre, wallpaper
         $title = trim($_POST["title"]);
         $console = trim($_POST["console"]);
         $description = trim($_POST["description"]);
         $value = $_POST["value"];
         $genre = $_POST["genre"];
-        $discount = $_POST["discount"];
         $wallpaper = $_FILES['wallpaper'];
 
         //tratando o wallpaper
@@ -27,7 +26,6 @@ if (isset($_GET["op"])) {
             "description" => $description,
             "value" => $value,
             "genre" => $genre,
-            "discount" => $discount,
             "wallpaper" => $wallpaper_url,
         );
 
