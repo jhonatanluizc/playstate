@@ -3,13 +3,11 @@
     <a class="navbar-brand mr-1" href="adm.php?view=home">PlayState</a>
 
     <ul class="navbar-nav ml-auto mr-0 mr-md-3 ">
-        <li class="nav-item" style="color:white;">
-
-            <a class="nav-link active" href="#">nome</a>
-        </li>
+      
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user-circle fa-fw "></i>
+                <i class="fas fa-caret-down"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <div class="text-center"><a class="dropdown-item" href="site.php?view=home">PlayState<a></div>
@@ -18,6 +16,7 @@
 
             </div>
         </li>
+        
     </ul>
 </nav>
 

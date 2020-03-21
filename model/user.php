@@ -88,7 +88,33 @@ class User
         }
         return $all_data;
     }
+    function update($user)
+    {
+        //id name username email password type
+        $database = new Database();
+        $connection = $database->connection();
+
+        $id = $user['id'];
+        $name = $user['name'];
+        $username = $user['username'];
+        $email = $user['email'];
+        $password = $user['password'];
+        $type = $user['type'];
+        
+
+        $stmt = $connection->prepare('UPDATE users SET name = :name, username = :username, email = :email, password = :password, type = :type WHERE id = :id');
+        $stmt->execute(array(
+            ':name' => $name,
+            ':username' => $username,
+            ':email' => $email,
+            ':password' => $password,
+            ':type' => $type,
+            ':id' => $id
+        ));
+    }
 }
+
+
 
 /*
 $user = new User();

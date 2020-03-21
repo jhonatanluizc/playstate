@@ -9,6 +9,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th width="20px" class="text-center"><i class="fas fa-user-edit"></th>
+                        <th>Id</th>
                         <th>Nome</th>
                         <th>Username</th>
                         <th>Email</th>
@@ -20,17 +22,19 @@
                     require_once("../model/user.php");
                     $user = new User();
                     $data = $user->select();
-
-                    foreach ($data as $key => $value) {
-                        echo "<tr>";
-                        echo  "<td>" . $value["name"] . "</td>";
-                        echo  "<td>" . $value["username"] . "</td>";
-                        echo  "<td>" . $value["email"] . "</td>";
-                        echo  "<td>" . $value["type"] . "</td>";
-                        echo "</tr>";
-                    }
-                    ?>
-
+                
+                    foreach ($data as $key => $value) { ?>
+                        <tr>
+                            <td width="20px" class="text-center">
+                                <a href="../controller/user.php?op=edit&id=<?= $value["id"] ?>"><i class="fas fa-user-edit"></i></a>
+                            </td>
+                            <td><?= $value["id"] ?></td>
+                            <td><?= $value["name"] ?></td>
+                            <td><?= $value["username"] ?></td>
+                            <td><?= $value["email"] ?></td>
+                            <td><?= $value["type"] ?></td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
