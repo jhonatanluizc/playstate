@@ -1,5 +1,14 @@
 <?php
 $id_game = $_POST["id"];
+
+$game_in_cart = false;
+if ($session_status) {
+    require_once("../model/cart.php");
+    $cart = new Cart();
+    $id_user = $session_status["id"];
+    $game_in_cart = $cart->select_where("where id_user = '$id_user' and id_game = '$id_game'");
+}
+
 ?>
 
 <style>
@@ -24,8 +33,12 @@ $id_game = $_POST["id"];
             <div class="text-right">
                 <h2>Preço | R$<?= $_POST["value"] ?></h2>
                 <br>
-                <?php if ($session_status) { ?>
-                    <button onclick="window.location.href ='../controller/cart.php?op=add&id_game=<?= $id_game ?>'" class="btn btn-primary">Adicionar ao Carrinho</button>
+                <?php if ($session_status) {
+                    if ($game_in_cart) { ?>
+                        <button onclick="window.location.href ='../controller/site.php?view=carrinho'" class="btn btn-primary">Gerenciar Carrinho</button>
+                    <?php } else { ?>
+                        <button onclick="window.location.href ='../controller/cart.php?op=add&id_game=<?= $id_game ?>'" class="btn btn-primary">Adicionar ao Carrinho</button>
+                    <?php } ?>
                 <?php } else { ?>
                     <button onclick="alert('Faça o login para continuar')" class="btn btn-primary">Adicionar ao Carrinho</button>
                 <?php } ?>
