@@ -108,8 +108,14 @@
         <?php
         require_once("../model/game.php");
         $game = new Game();
-        $data = $game->select_where("where id <= 8");
+        $data = $game->select_where("where id = 2 or id = 13 or id = 6 or id = 16");
         $util->card_generation($data);
+
+        $data = $game->select_where("where id = '" . rand(1, 4) . "' or id = '" . rand(5, 9) . "' or id = '" . rand(10, 14) . "' or id = '" . rand(15, 20) . "' ");
+     
+        $util->card_generation($data);
+
+
         ?>
 
     </div>

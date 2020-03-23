@@ -12,5 +12,6 @@ $view_pages = array(
     "login" => "login",
     "cadastro" => "register_user",
     "carrinho" => "cart",
-    "pagamento" => "checkout"
+    "pagamento" => "checkout",
+    "nota" => "eletronic_invoice"
 );

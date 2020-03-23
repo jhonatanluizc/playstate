@@ -1,3 +1,38 @@
+<script>
+    function card_test(op) {
+
+        let div = "";
+        if (op == 0) {
+
+        } else {
+       
+            div += "<div class=\"row\">";
+            div += "<div class=\"col-md-6 mb-3\">";
+            div += "<label for=\"cc-name\">Nome completo do títular</label>";
+            div += "<input type=\"text\" class=\"form-control\" id=\"cc-name\" required>"
+            div += "</div>";
+            div += "<div class=\"col-md-6 mb-3\">";
+            div += "<label for=\"cc-number\">Número do cartão de crédito</label>";
+            div += "<input type=\"text\" class=\"form-control\" id=\"cc-number\" required>";
+            div += "</div>";
+            div += "</div>"
+            div += " <div class=\"row\">";
+            div += "<div class=\"col-md-6 mb-3\">";
+            div += "<label for=\"cc-expiration\">Validade</label>";
+            div += "<input type=\"text\" class=\"form-control\" id=\"cc-expiration\" required>";
+            div += "</div>";
+            div += "<div class=\"col-md-6 mb-3\">";
+            div += "<label for=\"cc-expiration\">CVV</label>";
+            div += "<input type=\"text\" class=\"form-control\" id=\"cc-cvv\" required>";
+            div += "</div>";
+            div += "</div>";
+
+        }
+        document.getElementById("cartao").innerHTML = div;
+
+
+    }
+</script>
 <div class="container">
     <div class="py-5 text-center">
 
@@ -55,15 +90,18 @@
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Dados de Envio</h4>
-            <form method="post" action="../controller/cart.php?op=clear">
+            <!--<form method="post" action="../controller/cart.php?op=clear">-->
+            <form method="post" action="../controller/site.php?view=nota">
+                <input name="price" type="hidden" value="<?= $total ?>">
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Primeiro nome</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <input name="firstname" type="text" class="form-control" id="firstName" placeholder="" value="" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="lastName">Sobrenome</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <input name="lastname" type="text" class="form-control" id="lastName" placeholder="" value="" required>
                     </div>
                 </div>
 
@@ -72,10 +110,17 @@
                     <input type="email" class="form-control" id="email" placeholder="email@example.com" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="address">Endereço</label>
-                    <input type="text" class="form-control" id="address" placeholder="Rua, Número - Bairro" required>
+                <div class="row">
+                    <div class="mb-3 col-md-8">
+                        <label for="address">Endereço</label>
+                        <input name="address" type="text" class="form-control" id="address" placeholder="Rua, Número - Bairro" required>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="city">Cidade</label>
+                        <input name="city" type="text" class="form-control" id="city" placeholder="Cidade" required>
+                    </div>
                 </div>
+
 
                 <div class="row">
                     <div class="col-md-5 mb-3">
@@ -86,13 +131,13 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="state">Estado</label>
-                        <select class="custom-select d-block w-100" id="state" required>
+                        <select name="state" class="custom-select d-block w-100" id="state" required>
                             <option>SP</option>
                         </select>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="zip">CEP</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required>
+                        <input name="zip" type="number" class="form-control" id="zip" placeholder="" required>
                     </div>
                 </div>
 
@@ -101,45 +146,38 @@
 
                 <h4 class="mb-3">Dados de Pagamento</h4>
 
+                <br>
+
                 <div class="d-block my-3">
                     <div class="custom-control custom-radio">
-                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <input onclick="card_test(0)" value="bankslip" id="bankslip" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="bankslip">Boleto Bancário</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input onclick="card_test(1)" value="credit" id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
                         <label class="custom-control-label" for="credit">Cartão de Crédito</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <input onclick="card_test(1)" value="debit" id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
                         <label class="custom-control-label" for="debit">Cartão de Débito</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <input onclick="card_test(1)" value="paypal" id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
                         <label class="custom-control-label" for="paypal">Paypal</label>
                     </div>
+
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-name">Nome completo do títular</label>
-                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-number">Número do cartão de crédito</label>
-                        <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                    </div>
+
+
+                <div name="cartao" id="cartao">
+
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-expiration">Validade</label>
-                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-expiration">CVV</label>
-                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                    </div>
-                </div>
+
                 <hr class="mb-4">
-              
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar</button>
-                
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar</button>
             </form>
+            <br>
+            <br>
         </div>
     </div>
 
