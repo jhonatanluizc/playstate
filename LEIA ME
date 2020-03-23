@@ -1,0 +1,14 @@
+O site PlayStete foi desenvolvido em php, sql, html, css e javascript.
+Foi usado a Biblioteca JQuary e Bootstrap
+
+----------------------------------------------------------------------
+
+Existe um login de administrador, ele da acesso ao gerenciamento do site
+login: admin
+senha: admin
+
+----------------------------------------------------------------------
+
+O banco de dados (playstate.sql) está na pasta database, com isso basta importa-lo
+
+

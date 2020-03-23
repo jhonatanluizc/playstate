@@ -32,6 +32,7 @@ if ($session_status["type"] == "admin") {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PlayState - <?= $view ?></title>
         <?php
+        $import->favicon();
         $import->fontawesome();
         $import->bootstrap("css");
         $import->css();
@@ -57,6 +58,6 @@ if ($session_status["type"] == "admin") {
 <?php } else { ?>
     <script>
         alert("Ops.. Faça o login como um administrador para continuar...");
-        window.location.href ='../controller/site.php?view=login';
+        window.location.href = '../controller/site.php?view=login';
     </script>
 <?php } ?>
